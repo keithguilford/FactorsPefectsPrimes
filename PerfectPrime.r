@@ -1,22 +1,22 @@
 
 is.prime <- function(x) {
   if (x <= 1) {
-    return('Less than 1') # Numbers <= 1 are not prime
+    return(FALSE) # Numbers <= 1 are not prime
   }
   if (x == 2) {
-    return('Equal to 2') # 2 is a prime number
+    return(TRUE) # 2 is a prime number
   }
   if (x %% 2 == 0) {
-    return('Even') # Even numbers greater than 2 are not prime
+    return(FALSE) # Even numbers greater than 2 are not prime
   }
   # Check divisors from 3 to the square root of x
-  for (i in seq(3, x-1, by = 2)) {
+  for (i in seq(3, floor(sqrt(x)), by = 2)) {
     if (x %% i == 0) {
-      return(paste('False', x, 'is diviable by ',i)) # Found a divisor, not prime
-      print(i)
+      return(FALSE) # Found a divisor, not prime
+
     }
   }
-  return('Is Prime') # No divisors found, x is prime
+  return(TRUE) # No divisors found, x is prime
 }
 
 
@@ -39,4 +39,5 @@ is.perfect = function(x){
   }else{
     return(FALSE)
   }
+  
 }
