@@ -1,4 +1,3 @@
-
 is.prime <- function(x) {
   if (x <= 1) {
     return(FALSE) # Numbers <= 1 are not prime
